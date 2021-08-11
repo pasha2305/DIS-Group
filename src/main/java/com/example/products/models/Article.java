@@ -11,8 +11,10 @@ import java.util.Date;
 public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int articleId;
-    private  int productId;
+    private int id;
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
     private String name;
     private String content;
     private Date publicationDate;
